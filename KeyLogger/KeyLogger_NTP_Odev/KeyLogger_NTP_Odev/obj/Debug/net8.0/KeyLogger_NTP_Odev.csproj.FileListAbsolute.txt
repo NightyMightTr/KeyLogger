@@ -1,0 +1,14 @@
+C:\Users\musta\Desktop\KeyLOgger\KeyLogger_NTP_Odev\KeyLogger_NTP_Odev\bin\Debug\net8.0\KeyLogger_NTP_Odev.exe
+C:\Users\musta\Desktop\KeyLOgger\KeyLogger_NTP_Odev\KeyLogger_NTP_Odev\bin\Debug\net8.0\KeyLogger_NTP_Odev.deps.json
+C:\Users\musta\Desktop\KeyLOgger\KeyLogger_NTP_Odev\KeyLogger_NTP_Odev\bin\Debug\net8.0\KeyLogger_NTP_Odev.runtimeconfig.json
+C:\Users\musta\Desktop\KeyLOgger\KeyLogger_NTP_Odev\KeyLogger_NTP_Odev\bin\Debug\net8.0\KeyLogger_NTP_Odev.dll
+C:\Users\musta\Desktop\KeyLOgger\KeyLogger_NTP_Odev\KeyLogger_NTP_Odev\bin\Debug\net8.0\KeyLogger_NTP_Odev.pdb
+C:\Users\musta\Desktop\KeyLOgger\KeyLogger_NTP_Odev\KeyLogger_NTP_Odev\obj\Debug\net8.0\KeyLogger_NTP_Odev.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\musta\Desktop\KeyLOgger\KeyLogger_NTP_Odev\KeyLogger_NTP_Odev\obj\Debug\net8.0\KeyLogger_NTP_Odev.AssemblyInfoInputs.cache
+C:\Users\musta\Desktop\KeyLOgger\KeyLogger_NTP_Odev\KeyLogger_NTP_Odev\obj\Debug\net8.0\KeyLogger_NTP_Odev.AssemblyInfo.cs
+C:\Users\musta\Desktop\KeyLOgger\KeyLogger_NTP_Odev\KeyLogger_NTP_Odev\obj\Debug\net8.0\KeyLogger_NTP_Odev.csproj.CoreCompileInputs.cache
+C:\Users\musta\Desktop\KeyLOgger\KeyLogger_NTP_Odev\KeyLogger_NTP_Odev\obj\Debug\net8.0\KeyLogger_NTP_Odev.dll
+C:\Users\musta\Desktop\KeyLOgger\KeyLogger_NTP_Odev\KeyLogger_NTP_Odev\obj\Debug\net8.0\refint\KeyLogger_NTP_Odev.dll
+C:\Users\musta\Desktop\KeyLOgger\KeyLogger_NTP_Odev\KeyLogger_NTP_Odev\obj\Debug\net8.0\KeyLogger_NTP_Odev.pdb
+C:\Users\musta\Desktop\KeyLOgger\KeyLogger_NTP_Odev\KeyLogger_NTP_Odev\obj\Debug\net8.0\KeyLogger_NTP_Odev.genruntimeconfig.cache
+C:\Users\musta\Desktop\KeyLOgger\KeyLogger_NTP_Odev\KeyLogger_NTP_Odev\obj\Debug\net8.0\ref\KeyLogger_NTP_Odev.dll

